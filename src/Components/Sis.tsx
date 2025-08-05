@@ -1,11 +1,12 @@
 import React from "react";
-
+import { Table } from "./Table";
 export function Sis() {
   return (
     <>
       <h1 style={{ backgroundColor: 'lightblue', textAlign:'right'}}>Olá Sis, tudo bem</h1>
       <p>Sis está no Top</p>
       <h2>Welcome Aleandro</h2>
+      <Table/>
     </>
   )
 }

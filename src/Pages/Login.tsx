@@ -1,6 +1,7 @@
 import React from "react";
 import { UseState } from "../Components/UseState";
 import { UseState1 } from "../Components/UseState1";
+import { Footer } from "../Components/Footer";
 export function Login() {
   return (
     <>
@@ -9,6 +10,7 @@ export function Login() {
       </div>
       <UseState/>
       <UseState1/>
+      
     </>
   );
 }

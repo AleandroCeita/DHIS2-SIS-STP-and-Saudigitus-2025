@@ -5,8 +5,8 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"POT-Creation-Date: 2025-08-01T17:11:31.826Z\n"
-"PO-Revision-Date: 2025-08-01T17:11:31.827Z\n"
+"POT-Creation-Date: 2025-08-05T08:39:00.581Z\n"
+"PO-Revision-Date: 2025-08-05T08:39:00.582Z\n"
 
 msgid "ERROR"
 msgstr "ERROR"
@@ -19,3 +19,11 @@ msgstr "Hello {{name}}"
 
 msgid "Welcome to DHIS2 with TypeScript!"
 msgstr "Welcome to DHIS2 with TypeScript!"
+
+msgctxt "Application title"
+msgid "__MANIFEST_APP_TITLE"
+msgstr "aleandro-app"
+
+msgctxt "Application description"
+msgid "__MANIFEST_APP_DESCRIPTION"
+msgstr ""

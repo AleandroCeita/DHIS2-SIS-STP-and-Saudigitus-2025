@@ -4,8 +4,11 @@ import React, { FC } from "react";
 import classes from "./App.module.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Footer } from "./Components/Footer";
-import { AppRoutes } from "./Routes";
+import { AppRoutes } from "./Routes/AppRoutes";
+import { Kriminal } from "./Components/Kriminal";
 import { Menu } from "./Components/Menu";
+import { Table } from "./Components/Table";
+
 
 interface QueryResults {
   me: {
@@ -39,7 +42,8 @@ const MyApp: FC = () => {
           <div>
             <Menu />
           </div>
-
+<Kriminal/>
+<Table/>
           <AppRoutes />
           <Footer />
         </BrowserRouter>
