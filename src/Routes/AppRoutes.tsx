@@ -8,7 +8,7 @@ import { Post } from "../components/Post";
 
 import { Enfermeiro } from "../pages/enfermeiro/Enfermeiro";
 import { Laboratorio } from "../pages/laboratorio/Laboratorio";
-import { Medico } from "../pages/medico/Medico";
+import { ProcessoUnico } from "../pages/processoUnico/ProcessoUnico";
 import { TableComponent } from "../components/TableComponent";
 
 export function AppRoutes() {
@@ -23,7 +23,7 @@ export function AppRoutes() {
       <Route path="/tablecomponent" element={<TableComponent />} />
       <Route path="/enfermeiro" element={<Enfermeiro />} />
       <Route path="/laboratorio" element={<Laboratorio />} />
-      <Route path="/medico" element={<Medico />} />
+      <Route path="/medico" element={<ProcessoUnico />} />
     </Routes>
   );
 }

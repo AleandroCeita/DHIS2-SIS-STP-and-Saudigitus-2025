@@ -14,7 +14,7 @@ export function NavbarSaude() {
             <Link to="/laboratorio">Laboratório</Link>
           </li>
           <li className="navbar-brand">
-            <Link to="/medico">Médico</Link>
+            <Link to="/medico">Processo Único</Link>
           </li>
         </div>
       </nav>
