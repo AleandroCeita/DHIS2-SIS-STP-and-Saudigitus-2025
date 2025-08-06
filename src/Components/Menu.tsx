@@ -27,6 +27,9 @@ export function Menu() {
           <li>
             <Link to="/redirect">Redirect</Link>
           </li>
+          <li>
+            <Link to="/tablecomponent">Tabela RH SIS</Link>
+          </li>
         </ul>
       </nav>
     </>

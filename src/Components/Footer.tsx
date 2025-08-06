@@ -1,10 +1,15 @@
+import { Button } from "@dhis2/ui";
 import React from "react";
 export function Footer() {
   return (
     <>
-      <footer>
-        <h4>Contacto para Suporte técnico: 9922917</h4>
-      </footer>
+      <Button
+        name="Primary button"
+        onClick={function zA() {}}
+        primary
+        title="Button"
+        value="default"
+      >Suporte Técnico</Button>
     </>
   );
 }

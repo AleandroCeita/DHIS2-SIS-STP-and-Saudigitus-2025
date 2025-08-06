@@ -1,52 +1,27 @@
 import { useDataQuery } from "@dhis2/app-runtime";
-import i18n from "@dhis2/d2-i18n";
 import React, { FC } from "react";
+
 import classes from "./App.module.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Footer } from "./Components/Footer";
-import { AppRoutes } from "./Routes/AppRoutes";
-import { Kriminal } from "./Components/Kriminal";
-import { Menu } from "./Components/Menu";
-import { Table } from "./Components/Table";
-
-
-interface QueryResults {
-  me: {
-    name: string;
-  };
-}
-
-const query = {
-  me: {
-    resource: "me",
-  },
-};
+import { AppRoutes } from "./routes/AppRoutes";
+import { NavbarSaude } from "./components/navbarSaude/NavbarSaude";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const MyApp: FC = () => {
-  const { error, loading, data } = useDataQuery<QueryResults>(query);
-
-  if (error) {
-    return <span>{i18n.t("ERROR")}</span>;
-  }
-
-  if (loading) {
-    return <span>{i18n.t("Loading...")}</span>;
-  }
-
   return (
     <>
       <div className={classes.container}>
-        <h1>{i18n.t("Hello {{name}}", { name: data?.me?.name })}</h1>
-        <h3>{i18n.t("Welcome to DHIS2 with TypeScript!")}</h3>
+        <br />
         <BrowserRouter>
           <div>
-            <Menu />
+            <NavbarSaude />
+            <br />
           </div>
-<Kriminal/>
-<Table/>
+
           <AppRoutes />
-          <Footer />
+          <br />
         </BrowserRouter>
+
       </div>
     </>
   );

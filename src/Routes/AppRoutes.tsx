@@ -1,12 +1,15 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Login } from "../Pages/Login";
-import { Home } from "../Pages/Home";
-import { Sis } from "../Components/Sis";
-import { Rss } from "../Components/Rss";
-import { Post } from "../Components/Post";
-import { Redirect } from "../Components/Redirect";
-import { NotFound } from "../Components/NotFound";
+import { Login } from "../pages/Login";
+import { Home } from "../pages/home/Home";
+import { Sis } from "../components/sis/Sis";
+import { Rss } from "../components/Rss";
+import { Post } from "../components/Post";
+
+import { Enfermeiro } from "../pages/enfermeiro/Enfermeiro";
+import { Laboratorio } from "../pages/laboratorio/Laboratorio";
+import { Medico } from "../pages/medico/Medico";
+import { TableComponent } from "../components/TableComponent";
 
 export function AppRoutes() {
   return (
@@ -17,7 +20,10 @@ export function AppRoutes() {
       <Route path="/rss" element={<Rss />} />
       <Route path="/post/:id" element={<Post />} />
       <Route path="/post" element={<Post />} />
-      <Route path="/redirect" element={<Redirect />} />
+      <Route path="/tablecomponent" element={<TableComponent />} />
+      <Route path="/enfermeiro" element={<Enfermeiro />} />
+      <Route path="/laboratorio" element={<Laboratorio />} />
+      <Route path="/medico" element={<Medico />} />
     </Routes>
   );
 }

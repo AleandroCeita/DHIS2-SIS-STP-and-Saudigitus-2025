@@ -1,0 +1,20 @@
+
+
+.enf {
+    margin: 20px 0px 50px 0px;
+    display: flex;
+    padding: 20px 0px 50px 0px;
+}
+
+.enf1 {
+padding-top: 30px;
+}
+
+.enf2 {
+    background-color: #bdffe4;
+    padding-right: 20px;
+}
+
+.enf3 {
+    background-color: #e8ddcc;
+}
