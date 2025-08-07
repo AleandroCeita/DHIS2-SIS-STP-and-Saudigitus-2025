@@ -1,6 +1,8 @@
 import { useDataQuery } from "@dhis2/app-runtime";
 import {
+  DataTableCell,
   DataTableColumnHeader,
+  DataTableRow,
   Table,
   TableBody,
   TableCell,
@@ -13,28 +15,37 @@ import React from "react";
 
 // Interface do retorno da API
 interface QueryResults {
-    results: {
-        name: string
-        id: string
-        programTrackedEntityAttributes: {
-            trackedEntityAttribute: {
-                id: string
-                displayName: string
-                valueType: string
-                optionSet?: {
-                    options: {
-                        code: string
-                        name: string
-                    }[]
-                }
-            }
-        }[]
+  programs: {
+    name: string;
+    id: string;
+    programTrackedEntityAttributes: {
+      trackedEntityAttribute: {
+        id: string;
+        displayName: string;
+        valueType: string;
+        optionSet?: {
+          options: {
+            code: string;
+            name: string;
+          }[];
+        };
+      };
+    }[];
+  };
+trackedEntityInstances: {
+        trackedEntityInstances: {
+            trackedEntityInstance: string
+            attributes: {
+                value: string
+                attribute: string
+            }[]
+        }[]
     }
 }
 
 // Query para buscar dados reais do programa
 const query = {
-  results: {
+  programs: {
     resource: "programs",
     id: "rTmLXWgtUj2",
     params: {
@@ -42,6 +53,15 @@ const query = {
         "id,name",
         "programTrackedEntityAttributes[trackedEntityAttribute[id,displayName,valueType,optionSet[options[code,name]]]]",
       ],
+    },
+  },
+  trackedEntityInstances: {
+    resource: "trackedEntityInstances",
+    params: {
+      program: "rTmLXWgtUj2",
+      ou: "cIXhhPt1rIQ",
+      totalPages: true,
+      fields: ["trackedEntityInstance,attributes[value,attribute]"],
     },
   },
 };
@@ -53,12 +73,12 @@ export const TableComponent1 = () => {
   if (error) return <span>ERROR: {error.message}</span>;
   if (loading) return <span>Loading...</span>;
 
-  const rows = data?.results.programTrackedEntityAttributes || [];
+  const rows = data?.programs.programTrackedEntityAttributes || [];
 
   const getAttributeValue = (attributes: any[], label: string): string => {
     return attributes.find((attr) => attr.displayName === label)?.value || "—";
   };
-console.log(rows);
+  console.log(data);
   return (
     <>
       <h1>Processo Único</h1>
@@ -67,19 +87,34 @@ console.log(rows);
         <Table>
           <TableHead>
             <TableRowHead>
-                {
-                            data?.results.programTrackedEntityAttributes.map((attribute) => (
-                                <DataTableColumnHeader key={attribute.trackedEntityAttribute.id}>
-                                    {attribute.trackedEntityAttribute.displayName}
-                                </DataTableColumnHeader>
-                            ))  
-                        }
-
+              {data?.programs.programTrackedEntityAttributes.map(
+                (attribute) => (
+                  <DataTableColumnHeader
+                    key={attribute.trackedEntityAttribute.id}
+                  >
+                    {attribute.trackedEntityAttribute.displayName}
+                  </DataTableColumnHeader>
+                )
+              )}
             </TableRowHead>
           </TableHead>
           <TableBody>
-
-       
+                          {
+                        data?.trackedEntityInstances && data?.trackedEntityInstances?.trackedEntityInstances.map((instance) => (
+                            <DataTableRow key={instance.trackedEntityInstance}>
+                                {
+                                    data.programs.programTrackedEntityAttributes.map((attr) => (
+                                        <DataTableCell key={attr.trackedEntityAttribute.id}>
+                                            {
+                                                instance.attributes.find(a => a.attribute === attr.trackedEntityAttribute.id)?.value ||
+                                                "---"
+                                            }
+                                        </DataTableCell>
+                                    ))
+                                }
+                            </DataTableRow>
+                        ))
+                    }
           </TableBody>
         </Table>
       </div>
