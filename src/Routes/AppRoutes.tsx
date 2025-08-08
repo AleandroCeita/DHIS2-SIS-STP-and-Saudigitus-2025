@@ -10,6 +10,9 @@ import { Enfermeiro } from "../pages/enfermeiro/Enfermeiro";
 import { Laboratorio } from "../pages/laboratorio/Laboratorio";
 import { ProcessoUnico } from "../pages/processoUnico/ProcessoUnico";
 import { TableComponent } from "../components/TableComponent";
+import { TableComponent1 } from "../components/TableComponent1";
+import { FormApp } from "../components/formapp/FormsApp"; // Adjust the import path as necessary
+import { Welcome } from "../components/welcome";
 
 export function AppRoutes() {
   return (
@@ -21,9 +24,12 @@ export function AppRoutes() {
       <Route path="/post/:id" element={<Post />} />
       <Route path="/post" element={<Post />} />
       <Route path="/tablecomponent" element={<TableComponent />} />
+      <Route path="/tablecomponent1" element={<TableComponent1 />} />
       <Route path="/enfermeiro" element={<Enfermeiro />} />
       <Route path="/laboratorio" element={<Laboratorio />} />
-      <Route path="/medico" element={<ProcessoUnico />} />
+      <Route path="/processounico" element={<ProcessoUnico />} />
+      <Route path="/formapp" element={<FormApp />} />
+      <Route path="/" element={<Welcome />} />
     </Routes>
   );
 }
