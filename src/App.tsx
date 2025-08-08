@@ -7,6 +7,7 @@ import { AppRoutes } from "./routes/AppRoutes";
 import { NavbarSaude } from "./components/navbarSaude/NavbarSaude";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 const MyApp: FC = () => {
   return (
     <>
@@ -21,7 +22,7 @@ const MyApp: FC = () => {
           <AppRoutes />
           <br />
         </BrowserRouter>
-
+        
       </div>
     </>
   );

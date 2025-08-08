@@ -60,6 +60,7 @@ const query = {
     params: {
       program: "rTmLXWgtUj2",
       ou: "cIXhhPt1rIQ",
+      order: "created:desc",
       totalPages: true,
       fields: ["trackedEntityInstance,attributes[value,attribute]"],
     },

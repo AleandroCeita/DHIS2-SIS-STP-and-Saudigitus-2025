@@ -16,6 +16,9 @@ export function NavbarSaude() {
           <li className="navbar-brand">
             <Link to="/processounico">Processo Único</Link>
           </li>
+          <li className="navbar-brand">
+            <Link to="/formapp">Formulário Processo Único</Link>
+          </li>
         </div>
       </nav>
     </>
